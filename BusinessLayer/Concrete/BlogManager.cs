@@ -17,17 +17,21 @@ namespace BusinessLayer.Concrete
             return repoblog.List();
         }
 
-       public List<Blog> GetBlogById(int id) 
+        public List<Blog> GetBlogById(int id)
         {
-        return repoblog.List(x=>x.BlogId == id);
+            return repoblog.List(x => x.BlogId == id);
         }
 
         public List<Blog> GetBlogByAuthor(int id)
         {
-            return repoblog.List(x=>x.AuthorId == id);
+            return repoblog.List(x => x.AuthorId == id);
         }
-    }
+        public List<Blog> GetBlogCategory(int id)
+        {
+            return repoblog.List(x => x.CategoryId == id);
+        }
 
+    }
 
 }
 

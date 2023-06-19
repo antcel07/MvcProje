@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
 using PagedList;
 using PagedList.Mvc;
 
@@ -126,6 +128,42 @@ namespace MvcProje.Controllers
         {
             var bloglist = bm.GetAll();
             return View(bloglist);
+        }
+
+        [HttpGet]
+        public ActionResult AddNewBlog()
+        {
+            Context c = new Context();
+            List<SelectListItem> values = (from x in c.Categories.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryId.ToString()
+                                           }).ToList();
+            ViewBag.values=values;
+
+            List<SelectListItem> values2 = (from x in c.Authors.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.AuthorName,
+                                               Value = x.AuthorId.ToString()
+                                           }).ToList();
+            ViewBag.values2 = values2;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddNewBlog(Blog b)
+        {
+            bm.BlogAddBL(b);
+            return RedirectToAction("AdminBlogList");
+        }
+
+        public ActionResult DeleteBlog(int id)
+        {
+            bm.DeleteBlogBL(id);
+            return RedirectToAction("AdminBlogList");
         }
     }
 }

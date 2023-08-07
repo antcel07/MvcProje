@@ -12,7 +12,8 @@ Projemizin N Katmanlı mimari prensiplerinde (DataAccess, Entity, Business, Pres
 Projede uygulanan yapılar:
 Layout Kontrolü,Controller Yapısı,N Katmanlı Mimari,Repository Design Pattern,Generic Repository,Katmanlı Mimari Prensibi,Partial View,Code First,Entity Framework,Model Yapısı,View Yapısı,Linq Sorguları,Entity Framework Sorguları,İlişkili Tablolar,Diyagramlar,Trigger Kullanımı,Prosedür Oluşturma,Hazır Template Kurulumu ve Düzenlenmesi,CSS Kontrolleri,Bootstrap Yapısı,Dinamik Web Projeleri Oluşturma,Dashboard yapısı,Chart,Widget Cards kullanımları
 
-# Proje mssql bak dosya linki
+# Projeye ait veritabanı .bak dosya linki
+Eğer .bak dosyasını mssql veritabanında restore edip projeyi ayağa kaldırabilirsiniz. Ya da proje zaten codefirst yaklaşımıyla oluşturulduğu için kendi veritabanınıza uygun gerekli migrations ayarlamalarını yapabilirsiniz.
 https://drive.google.com/file/d/1Ngxj65FHKpctcmto_X4vrW7GwNgPf5PG/view?usp=sharing
 
 

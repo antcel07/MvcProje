@@ -52,6 +52,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.11.6.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -62,6 +65,12 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -135,8 +144,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -144,7 +157,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\Class2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE-3.0.4\.gitignore" />
@@ -2001,6 +2017,22 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="login-form-20\css\bootstrap.min.css" />
+    <Content Include="login-form-20\css\bootstrap\mixins\_border-radius.css" />
+    <Content Include="login-form-20\css\bootstrap\mixins\_reset-text.css" />
+    <Content Include="login-form-20\css\bootstrap\mixins\_screen-reader.css" />
+    <Content Include="login-form-20\css\bootstrap\mixins\_text-hide.css" />
+    <Content Include="login-form-20\css\bootstrap\mixins\_visibility.css" />
+    <Content Include="login-form-20\css\bootstrap\utilities\_stretched-link.css" />
+    <Content Include="login-form-20\css\bootstrap\_media.css" />
+    <Content Include="login-form-20\css\style.css" />
+    <Content Include="login-form-20\images\bg.jpg" />
+    <Content Include="login-form-20\index.html" />
+    <Content Include="login-form-20\js\bootstrap.min.js" />
+    <Content Include="login-form-20\js\jquery.min.js" />
+    <Content Include="login-form-20\js\main.js" />
+    <Content Include="login-form-20\js\popper.js" />
+    <Content Include="login-form-20\main.html" />
     <Content Include="miniblog\about.html" />
     <Content Include="miniblog\category.html" />
     <Content Include="miniblog\contact.html" />
@@ -2057,6 +2089,13 @@
     <Content Include="miniblog\js\popper.min.js" />
     <Content Include="miniblog\js\slick.min.js" />
     <Content Include="miniblog\single.html" />
+    <Content Include="Report-Login-Free\css\font-awesome.min.css" />
+    <Content Include="Report-Login-Free\css\style.css" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.svg" />
+    <Content Include="Report-Login-Free\images\1.png" />
+    <Content Include="Report-Login-Free\images\undraw_Work_time_re_hdyv.svg" />
+    <Content Include="Report-Login-Free\index.html" />
+    <Content Include="Report-Login-Free\starter-license-W3Layouts.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -2422,6 +2461,115 @@
     <Content Include="AdminLTE-3.0.4\plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="AdminLTE-3.0.4\README.md" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.eot" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.woff" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Report-Login-Free\fonts\FontAwesome.otf" />
+    <Content Include="web\css\style.css" />
+    <Content Include="web\images\16.jpg" />
+    <Content Include="web\images\img-sprite.png" />
+    <Content Include="web\index.html" />
+    <Content Include="web\w3layouts-License.txt" />
+    <Content Include="login-form-20\.DS_Store" />
+    <Content Include="login-form-20\css\.DS_Store" />
+    <Content Include="login-form-20\css\bootstrap\.DS_Store" />
+    <Content Include="login-form-20\css\bootstrap\mixins\.DS_Store" />
+    <Content Include="login-form-20\fonts\.DS_Store" />
+    <Content Include="login-form-20\images\.DS_Store" />
+    <Content Include="login-form-20\js\.DS_Store" />
+    <Content Include="login-form-20\scss\.DS_Store" />
+    <Content Include="login-form-20\scss\bootstrap\.DS_Store" />
+    <Content Include="login-form-20\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="login-form-20\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="login-form-20\scss\bootstrap\bootstrap.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="login-form-20\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_overflow.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="login-form-20\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="login-form-20\scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_alert.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_badge.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_button-group.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_buttons.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_card.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_carousel.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_close.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_code.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_dropdown.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_forms.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_functions.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_grid.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_images.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_input-group.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_list-group.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_media.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_mixins.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_modal.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_nav.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_navbar.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_pagination.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_popover.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_print.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_progress.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_reboot.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_root.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_spinners.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_tables.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_toasts.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_tooltip.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_transitions.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_type.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_utilities.scss" />
+    <Content Include="login-form-20\scss\bootstrap\_variables.scss" />
+    <Content Include="login-form-20\scss\style.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2447,7 +2595,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\BlogList.cshtml" />
@@ -2471,10 +2618,37 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Blog\AdminBlogList.cshtml" />
     <Content Include="Views\Blog\AddNewBlog.cshtml" />
+    <Content Include="Views\Blog\UpdateBlog.cshtml" />
+    <Content Include="Views\Blog\GetCommentByBlog.cshtml" />
+    <Content Include="Views\Author\AuthorList.cshtml" />
+    <Content Include="Views\Author\AddAuthor.cshtml" />
+    <Content Include="Views\Author\AuthorEdit.cshtml" />
+    <Content Include="Views\Comment\AdminCommentListTrue.cshtml" />
+    <Content Include="Views\Comment\AdminCommentListFalse.cshtml" />
+    <Content Include="Views\Category\AdminCategoryList.cshtml" />
+    <Content Include="Views\Blog\AdminBlogList2.cshtml" />
+    <Content Include="Views\About\UpdateAboutList.cshtml" />
+    <Content Include="Views\Contact\SendBox.cshtml" />
+    <Content Include="Views\Contact\MessageDetails.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Chart\Chart1.cshtml" />
+    <Content Include="Views\Chart\Chart2.cshtml" />
+    <Content Include="Views\Chart\Chart3.cshtml" />
+    <Content Include="Views\Shared\_AuthorLayout.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Login\AuthorLogin.cshtml" />
+    <Content Include="Views\User\Partial1.cshtml" />
+    <Content Include="Views\User\BlogList.cshtml" />
+    <Content Include="Views\User\UpdateBlog.cshtml" />
+    <Content Include="Views\User\AddNewBlog.cshtml" />
+    <Content Include="Views\Error\Page404.cshtml" />
+    <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\Blog\AuthorBlogList.cshtml" />
+    <Content Include="Views\Category\CategoryEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\AuthorLogin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

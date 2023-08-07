@@ -1,0 +1,74 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
+
+@{
+    ViewBag.Title = "GetCommentByBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Timeline</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- AdminLTE css -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+            <section class="content-header">
+                <div class="container-fluid">
+                   <!-- Timelime example  -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- The time line -->
+                            <div class="timeline">
+                                @foreach(var item in Model)
+                                {
+                                <!-- timeline time label -->
+                                <div class="time-label">
+                                    <span class="bg-success">&nbsp;&nbsp; @(((DateTime)item.CommentDate).ToString("dd-MMM-yyyy"))</span>
+                                </div>
+                                <!-- /.timeline-label -->
+                                <!-- timeline item -->
+                                <div>
+                                    <i class="fas fa-comment bg-yellow"></i>
+                                    <div class="timeline-item">
+                                     
+                                        <h3 class="timeline-header"><a href="#">Kullanıcı Adı: @item.Username</a> - @item.Mail</h3>
+
+                                        <div class="timeline-body">
+                                           @item.CommentText
+                                        </div>
+                                        <div class="timeline-footer">
+                                            <a class="btn btn-primary btn-sm">Detaylar</a>
+                                            <a class="btn btn-danger btn-sm">Kaldır</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </div>
+                <!-- /.timeline -->
+
+            </section>
+            <!-- /.content -->
+        </div>
+  
+        <!-- /.control-sidebar -->
+
+    <!-- ./wrapper -->
+
+</body>
+</html>

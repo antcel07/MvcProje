@@ -9,15 +9,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <span>Category</span>
-                @foreach(var x in Model)
-            {
-
-
+                <span>Kategori</span>
+             
                 <h3>@ViewBag.CategoryName</h3>
                 <p>@ViewBag.CategoryDesc</p>
-                }
-            
+      
             </div>
         </div>
     </div>
@@ -43,7 +39,7 @@
                             </div>
 
                             <p>@y.BlogContent.Substring(0, y.BlogContent.Substring(0, 200).LastIndexOf(" "))...</p>
-                            <p><a href="#">Read More</a></p>
+                            <p><a href="#">Devamını Oku</a></p>
                         </div>
                     </div>
                 </div>

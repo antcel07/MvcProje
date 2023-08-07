@@ -58,9 +58,17 @@
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
+    <Compile Include="Abstract\IMailDal.cs" />
     <Compile Include="Abstract\IRepostiroy.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAuthorDal.cs" />
+    <Compile Include="EntityFramework\EfBlogDal.cs" />
+    <Compile Include="EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="EntityFramework\EfCommentDal.cs" />
+    <Compile Include="EntityFramework\EfContactDal.cs" />
+    <Compile Include="EntityFramework\EfMailDal.cs" />
     <Compile Include="Migrations\202306090831151_mig1.cs" />
     <Compile Include="Migrations\202306090831151_mig1.designer.cs">
       <DependentUpon>202306090831151_mig1.cs</DependentUpon>
@@ -72,6 +80,38 @@
     <Compile Include="Migrations\202306130754551_mig4.cs" />
     <Compile Include="Migrations\202306130754551_mig4.designer.cs">
       <DependentUpon>202306130754551_mig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306211409329_mig41.cs" />
+    <Compile Include="Migrations\202306211409329_mig41.designer.cs">
+      <DependentUpon>202306211409329_mig41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306221340218_mig5.cs" />
+    <Compile Include="Migrations\202306221340218_mig5.designer.cs">
+      <DependentUpon>202306221340218_mig5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306231327456_mig6.cs" />
+    <Compile Include="Migrations\202306231327456_mig6.designer.cs">
+      <DependentUpon>202306231327456_mig6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306231426541_mig7.cs" />
+    <Compile Include="Migrations\202306231426541_mig7.designer.cs">
+      <DependentUpon>202306231426541_mig7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307060844106_mig71.cs" />
+    <Compile Include="Migrations\202307060844106_mig71.designer.cs">
+      <DependentUpon>202307060844106_mig71.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307190642424_mig8.cs" />
+    <Compile Include="Migrations\202307190642424_mig8.designer.cs">
+      <DependentUpon>202307190642424_mig8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307241305148_mig9.cs" />
+    <Compile Include="Migrations\202307241305148_mig9.designer.cs">
+      <DependentUpon>202307241305148_mig9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307241345295_mig10.cs" />
+    <Compile Include="Migrations\202307241345295_mig10.designer.cs">
+      <DependentUpon>202307241345295_mig10.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +129,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306130754551_mig4.resx">
       <DependentUpon>202306130754551_mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306211409329_mig41.resx">
+      <DependentUpon>202306211409329_mig41.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306221340218_mig5.resx">
+      <DependentUpon>202306221340218_mig5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306231327456_mig6.resx">
+      <DependentUpon>202306231327456_mig6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306231426541_mig7.resx">
+      <DependentUpon>202306231426541_mig7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307060844106_mig71.resx">
+      <DependentUpon>202307060844106_mig71.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307190642424_mig8.resx">
+      <DependentUpon>202307190642424_mig8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307241305148_mig9.resx">
+      <DependentUpon>202307241305148_mig9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307241345295_mig10.resx">
+      <DependentUpon>202307241345295_mig10.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

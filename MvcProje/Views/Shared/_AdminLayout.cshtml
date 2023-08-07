@@ -97,16 +97,34 @@
 
     with font-awesome or any other icon font library -->
 
+                        @if (User.IsInRole ("A"))
+                        {
+
+                            <li class="nav-item">
+
+                                <a href="/Blog/AdminBlogList/ " class="nav-link">
+
+                                    <i class="nav-icon fas fa-th"></i>
+
+                                    <p>
+                                        Bloglar
+                                    </p>
+
+                                </a>
+
+                            </li>
+                        }
+
 
 
                         <li class="nav-item">
 
-                            <a href="../widgets.html" class="nav-link">
+                            <a href="/Blog/AdminBlogList2/ " class="nav-link">
 
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-blog"></i>
 
                                 <p>
-                                    Bloglar
+                                    Blog Hızlı Bakış
                                 </p>
 
                             </a>
@@ -115,7 +133,7 @@
 
                         <li class="nav-item">
 
-                            <a href="../widgets.html" class="nav-link">
+                            <a href="/Author/AuthorList/" class="nav-link">
 
                                 <i class="nav-icon fas fa-people-arrows"></i>
 
@@ -127,24 +145,34 @@
 
                         </li>
 
-
-                        <li class="nav-item">
-
-                            <a href="../widgets.html" class="nav-link">
-
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-comment"></i>
-
                                 <p>
                                     Yorumlar
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
-
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Comment/AdminCommentListTrue" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Yayınlanan Yorumlar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Comment/AdminCommentListFalse" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Kaldırılan Yorumlar</p>
+                                    </a>
+                                </li>
 
+                            </ul>
                         </li>
 
                         <li class="nav-item">
 
-                            <a href="../widgets.html" class="nav-link">
+                            <a href="/Category/AdminCategoryList/" class="nav-link">
 
                                 <i class="nav-icon fas fa-box"></i>
 
@@ -159,7 +187,7 @@
 
                         <li class="nav-item">
 
-                            <a href="../widgets.html" class="nav-link">
+                            <a href="/About/UpdateAboutList" class="nav-link">
 
                                 <i class="nav-icon fas fa-address-book"></i>
 
@@ -173,7 +201,7 @@
 
                         <li class="nav-item">
 
-                            <a href="../widgets.html" class="nav-link">
+                            <a href="/Contact/SendBox/" class="nav-link">
 
                                 <i class="nav-icon fas fa-phone"></i>
 
@@ -185,19 +213,47 @@
 
                         </li>
 
-                        <li class="nav-item">
 
-                            <a href="../widgets.html" class="nav-link">
 
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-chart-bar"></i>
-
                                 <p>
                                     Grafikler
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
-
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Chart/Index/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Statik Grafik</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Chart/Chart1/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pie Grafik</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Chart/Chart2/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Column Grafik</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Chart/Chart3/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Line Grafik</p>
+                                    </a>
+                                </li>
 
+
+                            </ul>
                         </li>
+
 
 
                         <li class="nav-item">
@@ -216,7 +272,7 @@
 
                         <li class="nav-item">
 
-                            <a href="../widgets.html" class="nav-link">
+                            <a href="/User/LogOut/" class="nav-link">
 
                                 <i class="nav-icon fas fa-car"></i>
 

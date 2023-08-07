@@ -3,19 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete
 {
-    public class AuthorManager
+    public class AuthorManager:IAuthorService
     {
+        IAuthorDal _authordal;
         Repository<Author> repoauthor = new Repository<Author>();
 
-        public List<Author> GetAll()
-        {
-            return repoauthor.List();
-        }
-    }
+		public AuthorManager(IAuthorDal authordal)
+		{
+			_authordal = authordal;
+		}
+
+	
+
+
+		public List<Author> GetList()
+		{
+           return _authordal.List();
+		}
+
+		
+
+		public Author GetById(int id)
+		{
+			return _authordal.GetById(id);
+		}
+
+
+
+		public void AuthorDelete(Author author)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void TAdd(Author t)
+		{
+			_authordal.Insert(t);
+		}
+
+		public void TDelete(Author t)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void TUpdate(Author t)
+		{
+			_authordal.Update(t);
+		}
+	}
 }
 

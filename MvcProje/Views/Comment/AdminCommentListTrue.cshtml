@@ -1,0 +1,83 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
+
+@{
+    ViewBag.Title = "AdminCommentList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<body class="hold-transition sidebar-mini">
+
+    <!-- Main content -->
+
+    <section class="content">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="card-body">
+
+                    <!-- Post -->
+
+                    @foreach (var x in Model)
+                    {
+
+
+
+                    <div class="post">
+
+                        <div class="user-block">
+
+                            <img class="img-circle img-bordered-sm" src="/adminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="user image">
+
+                            <span class="username">
+
+                                <a href="#">@x.Username - @x.Blogs.BlogTitle</a>
+
+                            </span>
+
+                            <span class="description"> @(((DateTime)x.CommentDate).ToString("dd-MMM-yyyy"))</span>
+
+                        </div>
+                       
+
+
+                        <!-- /.user-block -->
+
+                        <p>
+
+                           @x.CommentText
+
+                        </p>
+
+                            <span class="float-right">
+
+                                <a href="/Comment/StatusChangeToFalse/@x.CommentId" class="link-black text-sm">
+
+                                    <i class="far fa-comments mr-1"></i> Yorumu Kaldır
+
+                                </a>
+
+                            </span>
+                            <br />
+                    </div>
+                    }
+                </div>
+
+            </div>
+
+        </div><!-- /.card-body -->
+
+
+
+    </section>
+
+</body>
+
+</html>

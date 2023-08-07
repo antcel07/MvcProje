@@ -4,12 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
 namespace MvcProje.Controllers
 {
+    [AllowAnonymous]
     public class MailSubcribeController : Controller
     {
+        SubscribeMailManager sm = new SubscribeMailManager(new EfMailDal());
+
         // GET: MailSubcribe
         [HttpGet]
         public PartialViewResult AddMail()
@@ -19,8 +23,8 @@ namespace MvcProje.Controllers
         [HttpPost]
         public PartialViewResult AddMail(SubscribeMail p)
         {
-            SubscribeMailManager sm= new SubscribeMailManager();
-            sm.BLAdd(p);
+            
+            sm.TAdd(p);
             return PartialView();
         }
 
